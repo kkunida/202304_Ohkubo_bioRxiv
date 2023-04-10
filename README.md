@@ -1,0 +1,44 @@
+# README
+ - This program was used in the following paper.
+	- Ohkubo *et al,* 2023, *bioRxiv*, "A hybrid *in silico*/in-cell controller for microbial bioprocesses with process-model mismatch
+ "
+ - The version of MATLAB/Simulink used is 2022a. We have not confirmed that the codes work with any other version. In addition, the following toolboxes are used.
+	- Simulink Design Optimization
+	- Optimization Toolbox
+	- Curve Fitting Toolbox
+	- Parallel Computing Toolbox and MATLAB Parallel Server
+		- These are not necessary if hold-out validation is performed on a local computer.
+ - The program consists of Simulink models of two strains, TA1415 and TA2445, and MATLAB codes for parameter estimation, process input optimization, and simulations assuming process-model mismatch (PMM).
+# Files
+- **Simulink models**
+	 - TA1415.slx
+	 - TA2445.slx
+- **Parameter estimation and simulation** 
+	- Main codes:
+		 - EstimateParameters_TA1415.mlx
+		 - EstimateParameters_TA2445.mlx
+	 - File containing the estimated parameter values:
+   		- pOpt_TA1415.mat
+   		- pOpt_TA2445.mat
+	- File containing the log of parameter estimation:
+		- optInfo_TA1415.mat
+		- optInfo_TA2445.mat
+- **Hold-out validation**
+	- Main codes: 
+		- Hold-outValidation_TA1415.mlx
+		- Hold-outValidation_TA2445.mlx
+		- If you do not use Parallel Computing Toolbox and MATLAB Parallel Server for Hold-out Validation, you need to change some parts of these codes yourself.
+	- File containing the estimated values:
+		- pOpts_validation_TA1415.mat
+		- pOpts_validation_TA2445.mat
+- **IPTG input optimization**
+	- Main codes:
+		- OptimizeInput_TA1415.mlx
+		- OptimizeInput_TA2445.mlx
+- **Controller performance against PMM**
+	- Main codes: 
+		- IntroducePMM_TA1415.mlx
+		- IntroducePMM_TA2445.mlx
+- **Approximation of promoter response for TA2445**
+	- Main codes:
+		- Curvefit_TA2946.mlx
